@@ -24,7 +24,7 @@
     }
   </style>
   <script>
-    // Tap the balloon to cycle through different colours.
+  
     AFRAME.registerComponent('color-changer', {
       init: function () {
         const colors = ['#F45B8D', '#FFD166', '#55C1E7', '#8ED6A8', '#B78AE8'];
@@ -36,7 +36,6 @@
       }
     });
 
-    // Tap the gift box to grow it and return it to normal size.
     AFRAME.registerComponent('gift-toggle', {
       init: function () {
         let enlarged = false;
@@ -52,7 +51,6 @@
       }
     });
 
-    // Update the banner when the Hiro marker is found or lost.
     AFRAME.registerComponent('marker-status', {
       init: function () {
         const banner = document.getElementById('status');
@@ -68,7 +66,7 @@
     });
   </script>
 </head>
-<body>
+ <body>
   <div id="status">Looking for the Hiro marker...</div>
   <div id="help">Tap the pink balloon to change its colour · Tap the gift to make it bigger</div>
 
@@ -81,17 +79,17 @@
     </a-assets>
 
     <a-marker preset="hiro" marker-status>
-      <!-- Simple display base -->
+    
       <a-box position="0 -0.045 0" width="2" height="0.09" depth="1.55"
         color="#F8DCE8"></a-box>
 
-      <!-- 3D birthday cake model: original procedural GLB -->
+      
       <a-entity gltf-model="#birthday-cake" position="0 0.02 0"
         scale="0.78 0.78 0.78"
         animation="property: rotation; from: 0 0 0; to: 0 360 0; dur: 12000; easing: linear; loop: true">
       </a-entity>
 
-      <!-- Interactive balloon -->
+    
       <a-entity position="-0.68 0.48 0.10"
         animation="property: position; from: -0.68 0.42 0.10; to: -0.68 0.72 0.10; dir: alternate; dur: 1100; easing: easeInOutSine; loop: true">
        <a-sphere
@@ -103,30 +101,30 @@
         <a-cylinder position="0 -0.23 0" radius="0.006" height="0.30" color="#FFFFFF"></a-cylinder>
       </a-entity>
 
-      <!-- Second decorative balloon -->
+      
       <a-entity position="0.70 0.48 -0.05">
         <a-sphere radius="0.15" color="#62C5E8"></a-sphere>
         <a-cylinder position="0 -0.21 0" radius="0.005" height="0.27" color="#FFFFFF"></a-cylinder>
       </a-entity>
 
-      <!-- Gift box: custom gift-toggle interaction -->
+      
       <a-entity gift-toggle position="0.67 0.16 0.43">
         <a-box class="clickable" width="0.34" height="0.30" depth="0.30" color="#9B78D1"></a-box>
         <a-box class="clickable" position="0 0.16 0" width="0.38" height="0.045" depth="0.34" color="#F7C95B"></a-box>
         <a-box class="clickable" position="0 0 0.155" width="0.055" height="0.31" depth="0.012" color="#F7C95B"></a-box>
       </a-entity>
 
-      <!-- Party hat made from a cone -->
+      
       <a-cone position="-0.68 0.22 0.43" radius-bottom="0.19" radius-top="0"
         height="0.38" color="#55BFA0"></a-cone>
       <a-sphere position="-0.68 0.43 0.43" radius="0.045" color="#FFD166"></a-sphere>
 
-      <!-- Confetti decorations -->
+  
       <a-sphere position="-0.30 0.10 0.53" radius="0.045" color="#FFD166"></a-sphere>
       <a-box position="0.27 0.10 0.53" width="0.08" height="0.08" depth="0.08"
         color="#F48FB1" rotation="0 0 25"></a-box>
 
-      <!-- Scene title and labels -->
+    
       <a-text value="HAPPY BIRTHDAY!" position="0 1.22 0"
         align="center" width="3.1" color="#FFFFFF" side="double"></a-text>
       <a-text value="Make a wish!" position="0 1.02 0"
@@ -137,7 +135,7 @@
   camera
   cursor="rayOrigin: mouse"
   raycaster="objects: .clickable">
-</a-entity>
+ </a-entity>
   </a-scene>
 </body>
 </html>
